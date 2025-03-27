@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "446782901047",
+    "project_id": "futureforge-454802",
+    "storage_bucket": "futureforge-454802.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:446782901047:android:0585abe8154866cfcb68b2",
+        "android_client_info": {
+          "package_name": "com.example.myapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMZoxzh6UGn-fOZv6CXWezCyYpDkcG_Ds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
