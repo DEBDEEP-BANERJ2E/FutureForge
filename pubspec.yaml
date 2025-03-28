@@ -13,7 +13,7 @@ dependencies:
 
   cupertino_icons: ^1.0.8
   firebase_core: ^2.27.0 # Updated to latest stable version
-  firebase_auth: ^4.17.4  # Added Firebase Authentication
+  firebase_auth: ^4.16.0  # Added Firebase Authentication
   cloud_firestore: ^4.15.3 # Added Firestore
   provider: ^6.1.4 # For state management
   http: ^0.13.6 # If you're making HTTP requests

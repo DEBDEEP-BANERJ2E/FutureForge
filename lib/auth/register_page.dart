@@ -5,7 +5,7 @@ class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
 
   @override
-  RegisterPageState createState() => RegisterPageState(); 
+  RegisterPageState createState() => RegisterPageState();
 }
 
 class RegisterPageState extends State<RegisterPage> {
@@ -18,13 +18,20 @@ class RegisterPageState extends State<RegisterPage> {
     String password = passwordController.text.trim();
 
     String? result = await _authService.signUp(email, password);
-    
-    if (!mounted) return; 
+
+    if (!mounted) return;
 
     if (result != null) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(result)));
+      debugPrint("Registration Error: $result");
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(result)));
+    } else {
+      // Clear text fields after successful registration
+      emailController.clear();
+      passwordController.clear();
     }
   }
+
 
   @override
   Widget build(BuildContext context) {

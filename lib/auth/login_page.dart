@@ -24,10 +24,14 @@ class LoginPageState extends State<LoginPage> {
     if (!mounted) return;
 
     if (result != null) {
+      debugPrint("Login Error: $result");
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text(result)));
     } else {
-      // If login is successful, navigate to the DashboardPage
+      // Clear text fields after successful login
+      emailController.clear();
+      passwordController.clear();
+
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const DashboardPage()),
@@ -58,14 +62,6 @@ class LoginPageState extends State<LoginPage> {
                   MaterialPageRoute(
                       builder: (context) => const RegisterPage())),
               child: const Text("Don't have an account? Register"),
-            ),
-            const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const DashboardPage())),
-              child: const Text("Go to Dashboard"),
             ),
           ],
         ),
