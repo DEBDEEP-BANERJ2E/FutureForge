@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../auth/login_page.dart';
 import '../jobs/job_list.dart';
+import '../internships/internship_list.dart';
 import '../courses/courses_list.dart';
 import '../scholarships/scholarships_list.dart';
 import '../chatbot/chatbot_page.dart';
@@ -20,6 +21,7 @@ class DashboardPageState extends State<DashboardPage> {
   // List of pages for navigation
   final List<Widget> _pages = [
     const JobListPage(),
+    const InternshipListPage(),
     const CoursesListPage(),
     const ScholarshipsListPage(),
     const ChatbotPage(),
@@ -68,16 +70,16 @@ class DashboardPageState extends State<DashboardPage> {
             label: 'Jobs',
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.business_center),
+            label: 'Internships',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.school),
             label: 'Courses',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.card_giftcard),
             label: 'Scholarships',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
-            label: 'Chatbot',
           ),
         ],
         currentIndex: _selectedIndex,
