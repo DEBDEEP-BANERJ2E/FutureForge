@@ -30,6 +30,19 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/video_editing.jpg
+    - assets/thumbnail_design.jpg
+    - assets/uiux.jpg
+    - assets/mobile_dev.webp
+    - assets/medical_assistant.jpeg
+    - assets/farming.jpg
+    - assets/electrician.jpg
+    - assets/plumber.jpeg
+    - assets/flutter_dev.png
+    - assets/uiux.jpeg
+    - assets/marketing.png
+    - assets/hr.jpeg
 
   # fonts:
   #   - family: Schyler
