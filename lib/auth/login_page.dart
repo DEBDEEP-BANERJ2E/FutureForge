@@ -14,6 +14,7 @@ class LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final AuthService _authService = AuthService();
+  bool _obscurePassword = true;
 
   void _login() async {
     String email = emailController.text.trim();
@@ -28,7 +29,6 @@ class LoginPageState extends State<LoginPage> {
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text(result)));
     } else {
-      // Clear text fields after successful login
       emailController.clear();
       passwordController.clear();
 
@@ -42,28 +42,65 @@ class LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(title: const Text("Login")),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            TextField(
+      body: Center(
+        child: Container(
+          padding: const EdgeInsets.all(10),
+          margin: const EdgeInsets.all(5),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text(
+                "Login",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 20),
+              TextField(
                 controller: emailController,
-                decoration: const InputDecoration(labelText: "Email")),
-            TextField(
+                decoration: const InputDecoration(labelText: "Email"),
+              ),
+              const SizedBox(height: 10),
+              TextField(
                 controller: passwordController,
-                decoration: const InputDecoration(labelText: "Password"),
-                obscureText: true),
-            const SizedBox(height: 20),
-            ElevatedButton(onPressed: _login, child: const Text("Login")),
-            TextButton(
-              onPressed: () => Navigator.push(
+                decoration: InputDecoration(
+                  labelText: "Password",
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      _obscurePassword
+                          ? Icons.visibility_off
+                          : Icons.visibility,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        _obscurePassword = !_obscurePassword;
+                      });
+                    },
+                  ),
+                ),
+                obscureText: _obscurePassword,
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: _login,
+                child: const Text("Login"),
+              ),
+              TextButton(
+                onPressed: () => Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) => const RegisterPage())),
-              child: const Text("Don't have an account? Register"),
-            ),
-          ],
+                  MaterialPageRoute(builder: (context) => const RegisterPage()),
+                ),
+                child: const Text("Don't have an account? Register"),
+              ),
+            ],
+          ),
         ),
       ),
     );

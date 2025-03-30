@@ -11,7 +11,9 @@ class JobListPage extends StatelessWidget {
     final jobCategories = JobService.getJobs();
     
     return Scaffold(
-      appBar: AppBar(title: const Text('Job Listings')),
+      appBar: AppBar(title: const Text('Job Listings'),
+      automaticallyImplyLeading: false,
+      ),
       body: ListView(
         padding: const EdgeInsets.all(12.0),
         children: jobCategories.entries.map((entry) {

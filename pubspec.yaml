@@ -43,6 +43,7 @@ flutter:
     - assets/uiux.jpeg
     - assets/marketing.png
     - assets/hr.jpeg
+    - assets/background.jpg
 
   # fonts:
   #   - family: Schyler

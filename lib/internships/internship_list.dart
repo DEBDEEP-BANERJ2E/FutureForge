@@ -6,7 +6,10 @@ class InternshipListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Internships')),
+      appBar: AppBar(
+        title: const Text('Internships'),
+        automaticallyImplyLeading: false,
+      ),
       body: ListView(
         padding: const EdgeInsets.all(16.0),
         children: [

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'auth/login_page.dart';
 import 'dashboard/dashboard_page.dart';
+import 'home_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'FutureForge',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const AuthWrapper(),
+      home: const HomePage(), // Changed from AuthWrapper to HomePage
     );
   }
 }

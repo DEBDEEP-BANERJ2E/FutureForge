@@ -6,7 +6,9 @@ class ScholarshipsListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Scholarships')),
+      appBar: AppBar(title: const Text('Scholarships'),
+      automaticallyImplyLeading: false,
+      ),
       body: ListView(
         padding: const EdgeInsets.all(16.0),
         children: [

@@ -22,6 +22,7 @@ class CoursesListPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Courses'),
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
             icon: const Icon(Icons.smart_toy),
