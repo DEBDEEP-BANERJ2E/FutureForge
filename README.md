@@ -113,7 +113,6 @@ To **revolutionize education** using **AI-generated content**, provide **persona
 
 ## 🔄 User Flow Diagram
 
-```mermaid
 graph TD
 A[Login/Register] --> B{User Type}
 B --> C[Normal User Dashboard]
@@ -124,13 +123,7 @@ F --> G[Profile Verification]
 C --> H[AI Chatbot]
 H --> I[Suggestions & Filters]
 
-Frontend (React/Mobile) <--> Backend API (Node.js)
-                           |
-                           +--> MongoDB/Firebase
-                           |
-                           +--> Blockchain (Skill Verification)
-                           |
-                           +--> OpenAI / AI Models
+---
 
 🎯 UN Sustainable Development Goals (SDGs) Addressed
 SDG 4 – Quality Education
@@ -140,6 +133,8 @@ SDG 8 – Decent Work and Economic Growth
 SDG 9 – Industry, Innovation, and Infrastructure
 
 SDG 10 – Reduced Inequalities
+
+---
 
 ❓Why Do We Need FutureForge?
 Rural learners lack AI-personalized mentorship
@@ -152,6 +147,8 @@ Companies find it difficult to hire verified rural talent
 
 FutureForge brings all this together into one holistic platform
 
+---
+
 🎥 Demo & Links
 🔗 GitHub Repository: [Add your GitHub link here]
 
@@ -159,8 +156,12 @@ FutureForge brings all this together into one holistic platform
 
 🚀 Live MVP: [Add your hosted site link here]
 
+---
+
 🤝 Contributing
 We welcome community contributions! Open issues, suggest ideas, or raise pull requests to improve the ecosystem.
+
+---
 
 🙏 Thank You!
 Together, let’s build a future where opportunities are decentralized, learning is personalized, and every skill matters.
