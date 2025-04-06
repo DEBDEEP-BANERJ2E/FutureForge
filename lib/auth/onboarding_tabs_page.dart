@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:geocoding/geocoding.dart';
 import '../shared/user_profile_data.dart';
+import '../firebase_service.dart';
 
 class OnboardingTabsPage extends StatefulWidget {
   final String language;
@@ -196,6 +197,16 @@ class _OnboardingTabsPageState extends State<OnboardingTabsPage>
                     context,
                     MaterialPageRoute(builder: (_) => const DashboardPage()),
                   );
+                  FirebaseService.saveUserProfile({
+                    'name': UserProfileData.name,
+                    'address': UserProfileData.address,
+                    'age': UserProfileData.age,
+                    'experience': UserProfileData.experience,
+                    'jobTitle': UserProfileData.jobTitle,
+                    'city': UserProfileData.city,
+                    'stateAndCountry': UserProfileData.stateAndCountry,
+                    'expectedSalary': UserProfileData.expectedSalary,
+                  }, resume);
                 },
                 child: const Text("Continue"),
               )
